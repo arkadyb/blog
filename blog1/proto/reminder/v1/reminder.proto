@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package demo.reminder.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "reminder";
+
+service ReminderService {
+    rpc ScheduleReminder(ScheduleReminderRequest) returns (ScheduleReminderResponse) {
+    }
+}
+
+message ScheduleReminderRequest {
+    google.protobuf.Timestamp when = 1;
+}
+
+message ScheduleReminderResponse {
+    string id = 1;       
+}
