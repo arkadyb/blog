@@ -29,13 +29,14 @@ func (s *MyServer) ScheduleReminder(ctx context.Context, req *reminder.ScheduleR
 		return nil, status.Error(codes.InvalidArgument, "when should be in the future")
 	}
 
-	go func(dur time.Duration) {
+	newTimerID := uuid.New().String()
+	go func(id string, dur time.Duration) {
 		timer := time.NewTimer(dur)
 		<-timer.C
-		log.Info("Timer time!")
-	}(when.Sub(time.Now()))
+		log.Infof("Timer %s time!", newTimerID)
+	}(newTimerID, when.Sub(time.Now()))
 
 	return &reminder.ScheduleReminderResponse{
-		Id: uuid.New().String(),
+		Id: newTimerID,
 	}, nil
 }
