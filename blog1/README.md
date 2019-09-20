@@ -6,4 +6,4 @@ Follow the blog post for instructions and details.
 ## To run
 Run server from `cmd` folder with: `GO111MODULE=on go run main.go`
 
-Run client from `cmd/client` folder with: `GO111MODULE=on go run client.go`
+Run gRPC client from `cmd/client` folder with: `GO111MODULE=on go run client.go`

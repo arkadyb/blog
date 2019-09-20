@@ -1,4 +1,4 @@
-# `Medium Blog Post 2`
+# `Medium Blog Post 3`
 This are the source codes for the medium blog [post](https://medium.com/@arkadybalaba/quick-run-to-secure-your-grpc-api-with-ssl-tls-fbd910ec8eee).
 
 Follow the blog post for instructions and details.
@@ -6,4 +6,13 @@ Follow the blog post for instructions and details.
 ## To run
 Run server from `cmd` folder with: `GO111MODULE=on go run main.go`
 
-Run client from `cmd/client` folder with: `GO111MODULE=on go run client.go`
+Run gRPC client from `cmd/client` folder with: `GO111MODULE=on go run client.go`
+
+Call the HTTP/REST endpoint with a client of you choice.
+Example curl request:
+`curl --request PUT 
+  --url https://localhost:8080/v1/reminder/schedule 
+  --header 'content-type: application/json'
+  --data '{
+	"when": "2019-09-20T02:50:20Z"
+}'`
