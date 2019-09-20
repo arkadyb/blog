@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/arkadyb/blog/blog2/proto/reminder/v1"
+	"github.com/arkadyb/blog/blog3/proto/reminder/v1"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/google/uuid"
 	log "github.com/sirupsen/logrus"

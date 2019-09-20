@@ -4,10 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/arkadyb/blog/blog1/proto/reminder/v1"
+	"github.com/arkadyb/blog/blog3/proto/reminder/v1"
 	"github.com/golang/protobuf/ptypes"
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 )
 
 func main() {
@@ -15,8 +16,14 @@ func main() {
 		context.Background(),
 		5*time.Second,
 	)
+
+	clientCert, err := credentials.NewClientTLSFromFile("../../server.crt", "")
+	if err != nil {
+		log.Fatalln("failed to create cert", err)
+	}
+
 	reminderConn, err := grpc.DialContext(ctx, "localhost:8080",
-		grpc.WithInsecure(),
+		grpc.WithTransportCredentials(clientCert),
 	)
 	if err != nil {
 		log.Fatalln("Failed to dial server: ", err)

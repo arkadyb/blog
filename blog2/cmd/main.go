@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/arkadyb/demos/blog2/internal/server"
-	"github.com/arkadyb/demos/blog2/proto/reminder/v1"
+	"github.com/arkadyb/blog/blog2/internal/server"
+	"github.com/arkadyb/blog/blog2/proto/reminder/v1"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 )
