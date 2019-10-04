@@ -22,7 +22,7 @@ func (s *MyServer) ScheduleReminder(ctx context.Context, req *reminder.ScheduleR
 
 	when, err := ptypes.Timestamp(req.GetWhen())
 	if err != nil {
-		return nil, status.Error(codes.InvalidArgument, "when is invalid")
+		return nil, status.Error(codes.Internal, "cant convert timestamp into time")
 	}
 
 	if when.Before(time.Now()) {
