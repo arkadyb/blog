@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package demo.reminder.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/api/annotations.proto";
+
+import "github.com/arkadyb/go-proto-validators/validator.proto";
+
+option go_package = "reminder";
+
+service ReminderService {
+    rpc ScheduleReminder(ScheduleReminderRequest) returns (ScheduleReminderResponse) {
+        option (google.api.http) = { put: "/v1/reminder/schedule" body: "*" };
+    }
+}
+
+message ScheduleReminderRequest {
+    google.protobuf.Timestamp when = 1 [(validator.field) = {future_timestamp: true}];
+}
+
+message ScheduleReminderResponse {
+    string id = 1;       
+}
