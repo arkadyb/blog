@@ -1,5 +1,5 @@
 # `Know your inputs or gRPC request validation`
-This are the source codes for the medium.com blog [post]().
+This are the source codes for the medium.com blog [post](https://medium.com/@arkadybalaba/know-your-inputs-or-grpc-request-validation-8eb29a0ebc31).
 
 Follow the blog post for instructions and details.
 
