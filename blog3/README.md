@@ -1,5 +1,5 @@
-# `Medium Blog Post 3`
-This are the source codes for the medium blog [post](https://medium.com/@arkadybalaba/rest-over-grpc-with-grpc-gateway-for-go-9584bfcbb835).
+# `REST over gRPC with grpc-gateway for Go`
+This are the source codes for the medium.com blog [post](https://medium.com/@arkadybalaba/rest-over-grpc-with-grpc-gateway-for-go-9584bfcbb835).
 
 Follow the blog post for instructions and details.
 

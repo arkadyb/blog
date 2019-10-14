@@ -1,5 +1,5 @@
-# `Medium Blog Post 1`
-This are the source codes for the medium blog [post](https://medium.com/@arkadybalaba/api-with-grpc-and-golang-d6aba44345a0).
+# `API with gRPC and Golang`
+This are the source codes for the medium.com blog [post](https://medium.com/@arkadybalaba/api-with-grpc-and-golang-d6aba44345a0).
 
 Follow the blog post for instructions and details.
 

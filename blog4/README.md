@@ -1,5 +1,5 @@
-# `Medium Blog Post 4`
-This are the source codes for the medium blog [post]().
+# `Know your inputs or gRPC request validation`
+This are the source codes for the medium.com blog [post]().
 
 Follow the blog post for instructions and details.
 
