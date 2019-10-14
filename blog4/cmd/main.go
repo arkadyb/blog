@@ -9,7 +9,6 @@ import (
 
 	"github.com/arkadyb/blog/blog4/internal/server"
 	"github.com/arkadyb/blog/blog4/proto/reminder/v1"
-	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_validator "github.com/grpc-ecosystem/go-grpc-middleware/validator"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"google.golang.org/grpc"
@@ -21,9 +20,11 @@ func main() {
 	if err != nil {
 		log.Fatalln("failed to create cert", err)
 	}
-	grpcServer := grpc.NewServer(grpc.UnaryInterceptor(grpc_middleware.ChainUnaryServer(
-		grpc_validator.UnaryServerInterceptor(),
-	)), grpc.Creds(serverCert))
+	grpcServer := grpc.NewServer(
+		grpc.UnaryInterceptor(
+			grpc_validator.UnaryServerInterceptor(),
+		),
+		grpc.Creds(serverCert))
 	reminder.RegisterReminderServiceServer(grpcServer, new(server.MyServer))
 
 	clientCert, err := credentials.NewClientTLSFromFile("../server.crt", "")
